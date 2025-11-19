@@ -1,0 +1,11 @@
+sort1 uses: Bubble sort 
+
+How do you know?: On random50000 (6.7s) but in sorted50000 only (0.39s). Bubble sort can do it quickly when everything already sorted
+
+sort2 uses: Merge sort
+
+How do you know?: n random50000 (0.43s) and sorted50000 (0.34s), very fast and the speed is consistent, match O(n log n)
+
+sort3 uses: Selection sort
+
+How do you know?:Both random50000 (2.8s) and sorted50000 (2.83s), the same time.It's selection because it does the same time no matter input

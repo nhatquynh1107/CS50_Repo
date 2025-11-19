@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+        document.addEventListener("DOMContentLoaded", function()
+        {
+            let correctBtn = document.querySelector("#correct"); // # is id just 1 element
+            let wrongBtn = document.querySelectorAll(".wrong");
+            let result = document.querySelector("#mcresult");
+
+            correctBtn.addEventListener("click", function()
+                {
+                    correctBtn.style.backgroundColor = "green";
+                    result.textContent = "Correct!";
+                }
+            );
+
+            wrongBtn.forEach(btn => // function(btn): check each ans wrong
+            {
+                btn.addEventListener("click", function()
+                {
+                    btn.style.backgroundColor = "red";
+                    result.textContent = "Incorrect";
+
+                });
+
+            });
+
+            let btn = document.querySelector("#submit");
+            let input = document.querySelector("#textinput");
+            let result2 = document.querySelector("#result-2");
+
+            btn.addEventListener("click", function()
+            {
+                let ans = input.value.trim().toLowerCase();
+                if (ans == "cat")
+                {
+                    input.style.backgroundColor = "green";
+                    result2.textContent = "Correct!";
+                }
+                else 
+                {
+                    input.style.backgroundColor = "red";
+                    result2.textContent = "Incorrect";
+                }
+            });
+
+        });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                 <h3>What is 1 + 1?</h3>
+                 <button class = "wrong">3</button>
+                 <button class = "wrong">4</button>
+                 <button id = "correct">2</button>
+
+                 <p id = "mcresult"></p>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                 <h3>Which animal say "meow"? </h3>
+                 <input id = "textinput" type = "text">
+                 <button id = "submit">Check</button>
+                 <p id = "result-2"></p>
+            </div>
+        </div>
+    </body>
+</html>

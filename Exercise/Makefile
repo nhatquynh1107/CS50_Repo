@@ -1,11 +1,2 @@
-CC = gcc
-CFLAGS = -Wall -Wextra -std=c11
-LIBS = -lcs50
-
-# build any target that has a matching .c
-%: %.c
-	$(CC) $(CFLAGS) $< -o $@ $(LIBS)
-
-.PHONY: clean
-clean:
-	rm -f *.o *~ 
+filter:
+	clang -ggdb3 -gdwarf-4 -O0 -Qunused-arguments -std=c11 -Wall -Werror -Wextra -Wno-gnu-folding-constant -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wshadow -lm -o filter filter.c helpers.c

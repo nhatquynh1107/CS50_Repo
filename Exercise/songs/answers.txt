@@ -1,0 +1,2 @@
+Through this question, i know how to code SQL queries, like SELECT FROM, JOIN, ORDER BY, GROUP to analyze data.
+I know how to look at database schemas and how to fix erros 
